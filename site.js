@@ -2,7 +2,7 @@
 
 // The things to fill in before launch.
 const FORM_ENDPOINT = "";           // e.g. "https://formspree.io/f/xxxxxxxx" (accepts a JSON POST)
-const CONTACT_EMAIL = "noted@afonso.me";
+const CONTACT_EMAIL = "hello@couldbebetter.app";
 
 // --- Invite request form ----------------------------------------------------
 // With FORM_ENDPOINT set (a form service that accepts a JSON POST, such as
