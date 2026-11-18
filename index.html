@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Could Be Better — a production notebook for animation and VFX artists</title>
+<meta name="description" content="Could Be Better (CBB) keeps your shots, review notes, timer and timecard in one private notebook, designed for iPad, iPhone Duo, iPhone and Apple Watch. Now in beta.">
+<meta property="og:title" content="Could Be Better">
+<meta property="og:description" content="A production notebook for animation and VFX artists. Shots, notes, a timer and an honest timecard. Private, on your devices.">
+<meta property="og:image" content="assets/ipad-land-pulse.jpg">
+<meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="glow" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap">
+
+  <header class="top">
+    <a class="brand" href="./"><img src="assets/icon.png" alt="" width="34" height="34"> Could Be Better</a>
+    <nav>
+      <a class="hide-narrow" href="#devices">Devices</a>
+      <a class="hide-narrow" href="#features">What it does</a>
+      <a class="hide-narrow" href="#privacy">Privacy</a>
+      <button class="button small" type="button" data-open-invite>Join the beta</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="pill" role="img" aria-label="A shot timer, running">
+        <i class="dot"></i><span class="code">310.0 · 086.00</span><span class="clock" data-clock>0:00</span><i class="stop"></i>
+      </div>
+      <h1>Could Be
+        <span class="circled">Better.
+          <svg viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true"><path d="M18 62 C 14 22, 120 6, 214 12 C 300 18, 316 52, 300 80 C 280 112, 120 116, 52 100 C 6 88, 2 50, 40 28" pathLength="1"/></svg>
+        </span>
+      </h1>
+      <p class="scrawl" aria-hidden="true"><svg viewBox="0 0 60 40"><path d="M56 6 C 40 4, 18 10, 8 32 M8 32 l 2 -12 M8 32 l 11 -5" /></svg> noted.</p>
+      <p class="lede">A production notebook for animation and VFX artists. Your shots, every note you were given, a timer that follows you, and a timecard that adds itself up. Private, and yours.</p>
+      <div class="actions">
+        <button class="button" type="button" data-open-invite>Join the beta</button>
+        <a class="button quiet" href="#devices">See it on your devices</a>
+      </div>
+      <p class="fine"><span class="badge">Beta</span> Designed for iPad and iPhone Duo. At home on any iPhone. On your wrist with Apple Watch.</p>
+
+      <div class="stage" data-tilt>
+        <div class="frame pad-land layer" data-depth="6"><img src="assets/ipad-land-pulse.jpg" alt="Pulse on iPad in landscape: eighteen figures about a show called Paper Moon, a pipeline bar and a burn-up chart of approved and published shots." width="2000" height="1500"></div>
+        <div class="frame duo-open layer" data-depth="14"><img src="assets/duo-open-shot.jpg" alt="A shot open on an unfolded iPhone Duo: its notes on the left, its stage, timer and actions on the right." width="2000" height="1407" loading="lazy"></div>
+        <div class="frame phone layer" data-depth="22"><img src="assets/max-thisweek.jpg" alt="This Week on iPhone: three shots due, with notes to do, bids and timers." width="690" height="1500" loading="lazy"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Push the key a little hotter</span><span>Less fill</span><span class="hot">CBB</span><span>Warm the rim</span><span>Calm the background</span><span>Eyes need a ping</span><span class="hot">Could be better</span><span>Hold the mood from the last shot</span><span>Soften that shadow</span><span>More atmosphere in the doorway</span><span class="hot">CBB</span><span>Try it a stop brighter</span>
+    <span>Push the key a little hotter</span><span>Less fill</span><span class="hot">CBB</span><span>Warm the rim</span><span>Calm the background</span><span>Eyes need a ping</span><span class="hot">Could be better</span><span>Hold the mood from the last shot</span><span>Soften that shadow</span><span>More atmosphere in the doorway</span><span class="hot">CBB</span><span>Try it a stop brighter</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <main>
+    <section class="note-machine reveal" aria-labelledby="notes-title">
+      <p class="eyebrow">You know the feeling</p>
+      <h2 id="notes-title">Every show is a long list of small notes.</h2>
+      <div class="note-card">
+        <div class="from"><span id="note-from">Supervisor notes</span><span id="note-shot">310.0 / 086.00</span></div>
+        <div class="note-line" id="note-line">
+          <button class="check" id="note-check" aria-label="Mark this note done" aria-pressed="false"></button>
+          <span class="text" id="note-text" aria-live="polite">Push the key a little hotter on the face</span>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="button quiet" id="note-next" type="button">Give me another note</button>
+      </div>
+      <p class="tally" id="note-tally">Tick it off. There's always another.</p>
+    </section>
+
+    <section class="devices reveal" id="devices" aria-labelledby="devices-title">
+      <p class="eyebrow">One show, every screen</p>
+      <h2 id="devices-title">Built for the device in your hand, not shrunk to fit it.</h2>
+      <div class="tabs" role="tablist" aria-label="Devices">
+        <button role="tab" id="tab-ipad" aria-controls="panel-ipad" aria-selected="true">iPad</button>
+        <button role="tab" id="tab-duo" aria-controls="panel-duo" aria-selected="false" tabindex="-1">iPhone Duo</button>
+        <button role="tab" id="tab-iphone" aria-controls="panel-iphone" aria-selected="false" tabindex="-1">iPhone</button>
+        <button role="tab" id="tab-watch" aria-controls="panel-watch" aria-selected="false" tabindex="-1">Apple Watch</button>
+      </div>
+
+      <div class="panel-device" role="tabpanel" id="panel-ipad" aria-labelledby="tab-ipad">
+        <div class="shots one">
+          <figure><div class="frame pad-land"><img src="assets/ipad-land-board.jpg" alt="The Board on iPad: every shot in the show laid out in lanes by stage, with filters and a search field above." width="2000" height="1500" loading="lazy"></div><figcaption>The Board, every lane at once</figcaption></figure>
+        </div>
+        <div class="says">
+          <h3>The desk view.</h3>
+          <p>A sidebar, a full board you can pinch and drag, and a timecard grid for the whole week. Keyboard shortcuts for everything, and the timer always in the toolbar.</p>
+          <ul><li>Drag a shot between stages</li><li>Notes and shot details side by side</li><li>Works with a keyboard, trackpad and Pencil</li></ul>
+        </div>
+      </div>
+
+      <div class="panel-device" role="tabpanel" id="panel-duo" aria-labelledby="tab-duo" hidden>
+        <div class="shots three">
+          <figure><div class="frame duo-fold"><img src="assets/duo-thisweek.jpg" alt="This Week on a folded iPhone Duo, with the timer in the top bar and the tabs down the side." width="1031" height="1500" loading="lazy"></div><figcaption>Folded</figcaption></figure>
+          <figure class="grow"><div class="frame duo-open"><img src="assets/duo-open-shot.jpg" alt="A shot on an open iPhone Duo: notes on the left half, stage, timer and actions on the right half." width="2000" height="1407" loading="lazy"></div><figcaption>Open: notes on one side, the shot on the other</figcaption></figure>
+          <figure class="grow"><div class="frame duo-open"><img src="assets/duo-open-now.jpg" alt="The Now screen on a half-open iPhone Duo: the timer dial on one half and the shot's open fixes on the other." width="2000" height="1407" loading="lazy"></div><figcaption>Propped up: the clock on one half, your fixes on the other</figcaption></figure>
+        </div>
+        <div class="says">
+          <h3>Three poses, three layouts.</h3>
+          <p>Folded, it's a pocket timer and a short list. Open, each half of the screen does its own job, with nothing important under the fold. Stand it on your desk and it becomes a clock with your to-do beside it.</p>
+          <ul style="--dot: var(--focus)"><li>The timer stays in the same place in every pose</li><li>Controls move to the side where your thumb is</li><li>Nothing jumps when you open or close it</li></ul>
+        </div>
+      </div>
+
+      <div class="panel-device" role="tabpanel" id="panel-iphone" aria-labelledby="tab-iphone" hidden>
+        <div class="shots three phones">
+          <figure><div class="frame phone"><img src="assets/max-thisweek.jpg" alt="This Week on iPhone." width="690" height="1500" loading="lazy"></div><figcaption>This Week</figcaption></figure>
+          <figure><div class="frame phone"><img src="assets/max-shot.jpg" alt="A shot's notes on iPhone, with a timer running." width="690" height="1500" loading="lazy"></div><figcaption>A shot's notebook</figcaption></figure>
+          <figure><div class="frame phone"><img src="assets/max-timecard.jpg" alt="The week's timecard on iPhone." width="690" height="1500" loading="lazy"></div><figcaption>Timecard</figcaption></figure>
+        </div>
+        <div class="says">
+          <h3>All of it, one-handed.</h3>
+          <p>Every screen the iPad has, rethought for a phone, from the smallest iPhone to a Pro Max. The timer rides above the tab bar so Start and Stop are always under your thumb.</p>
+          <ul style="--dot: var(--published)"><li>Live Activity on the Lock Screen and Dynamic Island</li><li>Widgets for today, this week and the running timer</li><li>Capture a note from any screen</li></ul>
+        </div>
+      </div>
+
+      <div class="panel-device" role="tabpanel" id="panel-watch" aria-labelledby="tab-watch" hidden>
+        <div class="shots one watch-wrap">
+          <div class="watch" role="img" aria-label="An illustration of the Apple Watch app timing a shot, with Stop and Focus buttons.">
+            <div class="crown"></div>
+            <div class="face">
+              <div class="w-top"><span><i></i> Timing shot</span><span>9:41</span></div>
+              <div class="w-code">310.0 · 086.00</div>
+              <div class="w-clock" data-clock-long>0:00:00</div>
+              <div class="w-bar"><b></b></div>
+              <div class="w-today">Today 4:16 of 8:00</div>
+              <div class="w-buttons"><span class="w-stop">■ Stop</span><span class="w-focus">◎ Focus</span></div>
+            </div>
+          </div>
+          <p class="illus">Illustration of the Watch app. It runs the same timer as the pill at the top of this page.</p>
+        </div>
+        <div class="says">
+          <h3>Start and stop from your wrist.</h3>
+          <p>The Watch app mirrors your iPhone: see what's timing, stop it, switch shots or start a focus block without taking your phone out in dailies. Complications put the running timer and today's hours on your watch face.</p>
+          <ul style="--dot: var(--amber)"><li>Syncs with your iPhone automatically</li><li>Complications for every watch face slot</li><li>A tap on the wrist when a timer starts or stops</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="features" id="features">
+      <article class="card wide reveal">
+        <div class="copy">
+          <p class="eyebrow">Notes</p>
+          <h3>Every note, on the shot it belongs to.</h3>
+          <p>Capture review notes as fast as they're said, filed by shot, by day and by who gave them. Tick fixes off, and see what's still open before you send it back.</p>
+        </div>
+        <div class="frame duo-open"><img src="assets/duo-open-thisweek.jpg" alt="This Week on an open iPhone Duo: shots due this week, each with a count of notes to do." width="2000" height="1407" loading="lazy"></div>
+      </article>
+      <article class="card wide flip reveal">
+        <div class="copy">
+          <p class="eyebrow">Timer and focus</p>
+          <h3>One timer. It follows you everywhere.</h3>
+          <p>Start from the app, a widget, the Lock Screen, Siri or your wrist. The Now screen shows only the shot in front of you and its open fixes, with a focus block when you need an hour without looking up.</p>
+        </div>
+        <div class="frame duo-open"><img src="assets/duo-open-now.jpg" alt="The Now screen: a timer dial beside the shot's open fixes, with Stop, Switch, Submit and Rendering buttons." width="2000" height="1407" loading="lazy"></div>
+      </article>
+      <article class="card wide reveal">
+        <div class="copy">
+          <p class="eyebrow">Timecard</p>
+          <h3>A timecard that already knows what you did.</h3>
+          <p>Hours land on the right shot and day as you work. Straight time, 1.5× and 2× are split out by your own rules or The Animation Guild's, and the grid copies straight into the studio's form. It flags hours; it never calculates pay.</p>
+        </div>
+        <div class="frame pad-land"><img src="assets/ipad-land-timecard.jpg" alt="The timecard on iPad: a week grid of hours per shot and per day, with straight time, overtime and daily totals." width="2000" height="1500" loading="lazy"></div>
+      </article>
+      <article class="card wide flip reveal">
+        <div class="copy">
+          <p class="eyebrow">Pulse</p>
+          <h3>The whole show, in charts that are yours.</h3>
+          <p>How heavy each week really was. Where your hours went. How reviews landed: approved, approved with a fix, or sent back. And a clean reel breakdown and timecard when the show wraps.</p>
+          <div class="pipeline" aria-hidden="true"><i style="--w: 18%; --c: var(--wip)"></i><i style="--w: 6%; --c: var(--teal)"></i><i style="--w: 76%; --c: var(--published)"></i></div>
+          <p class="legend"><span style="--c: var(--wip)">3 in progress</span><span style="--c: var(--teal)">1 ready for final check</span><span style="--c: var(--published)">13 published</span></p>
+        </div>
+        <div class="sheet"><img src="assets/pulse-charts.jpg" alt="Three Pulse charts: weekly load as bars with overtime marked, a ring showing where time went, and review cadence by week split into approved, with fix and sent back." width="1424" height="1520" loading="lazy"></div>
+      </article>
+    </div>
+
+    <section class="panel reveal" id="privacy">
+      <p class="eyebrow">Private by design</p>
+      <h2>Your notes are about unreleased work. They stay with you.</h2>
+      <div class="cols">
+        <div><h3>No account. No server.</h3><p>Everything is stored on your devices. There is nothing to sign up for and nowhere for your notes to leak from.</p></div>
+        <div><h3>Sync is your own iCloud.</h3><p>Your iPad, iPhone and Watch stay in step through your private iCloud. Nobody else can read it, including the developer.</p></div>
+        <div><h3>A lock for shoulders.</h3><p>One tap hides every shot name and note on screen, for screen shares and open-plan desks.</p></div>
+      </div>
+      <p style="margin-top: 24px"><a href="privacy.html">Read the privacy policy</a></p>
+    </section>
+
+    <section class="panel beta reveal" id="beta">
+      <p class="eyebrow">Beta</p>
+      <h2>Fifty artists. Then we see.</h2>
+      <p class="lede">Could Be Better was built by one lighting artist, on one show. The beta is for finding out where it doesn't fit yours: other studios, other pipelines, other timecards.</p>
+      <div class="spots"><i></i> 50 spots through TestFlight</div>
+      <div class="actions">
+        <button class="button" type="button" data-open-invite>Ask for an invite</button>
+        <a class="button quiet" href="support.html">How the beta works</a>
+      </div>
+      <p class="fine">Requires iOS or iPadOS 27.1 or later. Free during the beta.</p>
+      <div class="honest">
+        <h3>The honest part</h3>
+        <p>This is beta software. It ran a full show over a summer without losing anything, and it can still have bugs, including ones that lose data. It's provided as is, with no warranty, and you use it at your own risk. Export a backup regularly (it's one tap in Settings), and don't make it the only place something important lives. <a href="terms.html">Beta terms</a></p>
+      </div>
+    </section>
+
+    <dialog id="invite" aria-labelledby="invite-title">
+      <form id="invite-form" method="dialog" novalidate>
+        <div class="dialog-head">
+          <h2 id="invite-title">Ask for an invite</h2>
+          <button class="close" type="button" data-close-invite aria-label="Close">×</button>
+        </div>
+        <p class="dialog-lede">Fifty spots, picked to cover different studios and jobs. You'll get a TestFlight invite by email if there's room.</p>
+        <label>Name<input name="name" autocomplete="name" required></label>
+        <label>Email <small>the one on your Apple Account, so the invite works</small><input name="email" type="email" autocomplete="email" inputmode="email" required></label>
+        <label>What you do
+          <select name="role" required>
+            <option value="">Choose…</option>
+            <option>Lighting</option><option>Compositing</option><option>Animation</option><option>FX</option><option>Layout / Previs</option><option>Lookdev / Surfacing</option><option>Modeling / Rigging</option><option>Matte painting / Environments</option><option>Production / Coordination</option><option>Supervisor / Lead</option><option>Other</option>
+          </select>
+        </label>
+        <label>Where you work
+          <select name="workplace">
+            <option value="">Prefer not to say</option>
+            <option>Feature animation</option><option>TV / streaming animation</option><option>VFX</option><option>Games / real-time</option><option>Advertising / motion</option><option>Freelance</option><option>Student</option>
+          </select>
+        </label>
+        <label>Is your timecard under a union agreement?
+          <select name="union">
+            <option value="">Not sure</option><option>Yes, The Animation Guild</option><option>Yes, another union</option><option>No</option>
+          </select>
+        </label>
+        <fieldset>
+          <legend>Devices you'd use it on</legend>
+          <label class="tick"><input type="checkbox" name="devices" value="iPad"> iPad</label>
+          <label class="tick"><input type="checkbox" name="devices" value="iPhone"> iPhone</label>
+          <label class="tick"><input type="checkbox" name="devices" value="iPhone Duo"> iPhone Duo</label>
+          <label class="tick"><input type="checkbox" name="devices" value="Apple Watch"> Apple Watch</label>
+        </fieldset>
+        <label>Anything else? <small>optional</small><textarea name="note" rows="2" maxlength="600"></textarea></label>
+        <label class="tick consent"><input type="checkbox" name="consent" required> <span>I understand this is beta software, provided as is, and that it may have bugs, including data loss. I've read the <a href="terms.html" target="_blank" rel="noopener">beta terms</a> and <a href="privacy.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
+        <p class="form-error" id="invite-error" role="alert" hidden></p>
+        <div class="dialog-actions">
+          <button class="button quiet" type="button" data-close-invite>Cancel</button>
+          <button class="button" type="submit">Send request</button>
+        </div>
+        <p class="fine">Your details are used only to run the beta, and deleted when it ends or when you ask.</p>
+      </form>
+      <div id="invite-done" hidden>
+        <h2>Request sent.</h2>
+        <p id="invite-done-text">Thank you. If there's a spot, a TestFlight invite will arrive at the email you gave.</p>
+        <div class="dialog-actions"><button class="button" type="button" data-close-invite>Done</button></div>
+      </div>
+    </dialog>
+
+    <section class="faq reveal" id="faq">
+      <p class="eyebrow">Questions</p>
+      <h2>Fair things to ask.</h2>
+      <div style="margin-top: 24px">
+        <details><summary>Is it safe to use on a show under NDA?</summary><p>The app has no server and sends your notes nowhere. They live on your devices and, if you turn it on, in your own private iCloud. What you write down, and whether your studio allows personal note-taking tools, is still your call and your studio's policy.</p></details>
+        <details><summary>Does it connect to ShotGrid, ftrack or the studio pipeline?</summary><p>No, on purpose. It doesn't touch studio systems or need IT's permission. It is your own notebook, the way a paper one would be.</p></details>
+        <details><summary>Do I need an iPad, or a Duo?</summary><p>No. It's designed to make the most of those screens, and it's a complete app on any iPhone running iOS 27.1 or later. The Apple Watch app is optional and comes with the iPhone app.</p></details>
+        <details><summary>I'm not in lighting. Is it for me?</summary><p>If you work on shots, get notes in reviews and fill in a timecard, yes. You name your own reviews and timers when you set up a show.</p></details>
+        <details><summary>My studio's overtime rules are different.</summary><p>Set your own lines for 1.5× and 2×, or say you aren't paid overtime at all. Guild artists can pick how they're paid and switch off any rule that doesn't apply to their deal.</p></details>
+        <details><summary>What does it cost?</summary><p>Nothing during the beta. Pricing after that isn't decided. Your data stays yours either way, and you can export all of it at any time.</p></details>
+        <details><summary>Why is it called that?</summary><p>CBB. You've had the note.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="row">
+      <span>Could Be Better. Made by a lighting artist, between shots.</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Beta terms</a> · <a href="support.html">Support</a> · <a id="mail" href="mailto:noted@afonso.me">noted@afonso.me</a></span>
+    </div>
+  </footer>
+</div>
+<script src="site.js"></script>
+</body>
+</html>
