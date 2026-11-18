@@ -2,7 +2,8 @@
 // applies before the page paints. Dark is the default (most artists work in
 // the dark); Light is one tap away and remembered.
 (function theme() {
-  const KEY = "cbb-theme";
+  // v2: dark became the default; choices saved before that are not carried over.
+  const KEY = "cbb-theme-v2";
   const root = document.documentElement;
   let saved = null;
   try { saved = localStorage.getItem(KEY); } catch { /* private mode: follow the system */ }

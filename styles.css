@@ -194,7 +194,14 @@ p { margin: 0; text-wrap: pretty; }
 .frame.duo-open { --radius: clamp(12px, 2vw, 26px); --bezel: clamp(5px, 0.8vw, 9px); position: relative; }
 .frame.duo-open::after { content: ""; position: absolute; top: var(--bezel); bottom: var(--bezel); left: 50%; width: 1px; background: linear-gradient(oklch(0 0 0 / 0), oklch(0 0 0 / 0.16) 20%, oklch(0 0 0 / 0.16) 80%, oklch(0 0 0 / 0)); }
 .frame.duo-fold img { aspect-ratio: 1031 / 1500; }
-.frame.duo-fold { --inset: clamp(4px, 2.4%, 12px); --radius: clamp(14px, 2.4vw, 30px); --bezel: clamp(5px, 0.8vw, 9px); }
+/* Folded Duo: the hinge is the left edge, so that side is square with a
+   spine and only the right corners are round (screen radii 8pt and 59pt on a
+   466pt-wide display, from the simulator's device profile). */
+.frame.duo-fold { --inset: clamp(4px, 3.2%, 14px); --bezel: clamp(5px, 0.8vw, 9px); position: relative; padding-left: calc(var(--bezel) * 2.1); border-radius: 3.5% 15% 15% 3.5% / 2.4% 10.4% 10.4% 2.4%; }
+.frame.duo-fold img { border-radius: 1.8% 12.8% 12.8% 1.8% / 1.3% 8.8% 8.8% 1.3%; }
+.frame.duo-fold::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--bezel) * 1.5); border-radius: inherit; border-top-right-radius: 0; border-bottom-right-radius: 0; background: linear-gradient(90deg, oklch(1 0 0 / 0.16), oklch(1 0 0 / 0.03) 55%, oklch(0 0 0 / 0.35)); }
+.frame.duo-open img { border-radius: 5.8% / 8.2%; }
+.frame.duo-open { border-radius: 6.6% / 9.3%; }
 .frame.phone img { aspect-ratio: 690 / 1500; }
 .frame.phone { --inset: clamp(4px, 3%, 12px); --radius: clamp(20px, 3.4vw, 44px); --bezel: clamp(5px, 0.8vw, 9px); }
 
@@ -254,27 +261,15 @@ p { margin: 0; text-wrap: pretty; }
 @media (max-width: 640px) { .shots.three:not(.phones) { flex-wrap: wrap; } .shots.three:not(.phones) figure { flex: 1 1 100%; } .shots.three:not(.phones) figure:first-child { flex: 0 1 46%; } }
 @media (prefers-reduced-motion: no-preference) { .panel-device:not([hidden]) .shots { animation: rise 0.45s ease both; } @keyframes rise { from { opacity: 0; transform: translateY(12px); } } }
 
-/* The drawn Apple Watch */
+/* Apple Watch: a real screenshot in a case drawn to the 46mm proportions
+   (251 x 291pt case, 22pt of glass around a 208 x 248pt screen). */
 .watch-wrap { flex-direction: column; align-items: center; }
-.watch { position: relative; isolation: isolate; width: min(224px, 56vw); aspect-ratio: 0.86; margin: 13% 0; background: linear-gradient(150deg, #4a4c53, #1d1e22 55%, #2b2d32); border-radius: 25% / 21.5%; padding: 3.6%; box-shadow: var(--shadow), inset 0 0 0 1px oklch(1 0 0 / 0.14); }
-/* Band, above and below the case, fading out. */
-.watch::before, .watch::after { content: ""; position: absolute; z-index: -1; left: 13%; right: 13%; height: 34%; background: linear-gradient(90deg, #17181b, #2a2c31 22%, #2a2c31 78%, #17181b); }
-.watch::before { bottom: 93%; border-radius: 16% 16% 0 0 / 30% 30% 0 0; -webkit-mask-image: linear-gradient(to top, #000 30%, transparent); mask-image: linear-gradient(to top, #000 30%, transparent); }
-.watch::after { top: 93%; border-radius: 0 0 16% 16% / 0 0 30% 30%; -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent); mask-image: linear-gradient(to bottom, #000 30%, transparent); }
-.watch .crown { position: absolute; z-index: -1; right: -5%; top: 22%; width: 7%; height: 17%; border-radius: 28% / 16%; background: linear-gradient(#55585f, #25272b); }
-.watch .side { position: absolute; z-index: -1; right: -2.2%; top: 50%; width: 4%; height: 22%; border-radius: 40% / 10%; background: #2c2e33; }
-.watch .face { height: 100%; border-radius: 23.5% / 20%; background: #000; color: #f4f1ea; padding: 12% 10% 9%; display: flex; flex-direction: column; font-size: clamp(10px, 3vw, 12.5px); }
-.w-top { display: flex; justify-content: space-between; font-size: 0.82em; letter-spacing: 0.06em; text-transform: uppercase; color: #9a9ca3; }
-.w-top i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #55b07a; margin-right: 3px; }
-.w-code { margin-top: 7%; font-family: var(--serif); font-size: 1.25em; }
-.w-clock { font-size: 2.55em; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; line-height: 1.1; }
-.w-bar { margin-top: auto; height: 5px; border-radius: 3px; background: #26282d; }
-.w-bar b { display: block; width: 53%; height: 100%; border-radius: 3px; background: #55b07a; }
-.w-today { margin-top: 5px; font-size: 0.82em; color: #9a9ca3; }
-.w-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8%; }
-.w-buttons span { text-align: center; padding: 8px 0; border-radius: 999px; font-weight: 600; font-size: 0.92em; }
-.w-stop { background: #b3262b; } .w-focus { background: #4a3f8f; }
-.illus { margin-top: 14px; font-size: 13px; color: var(--ink-mute); text-align: center; max-width: 24em; }
+.watch-fig { margin: 0; display: grid; justify-items: center; }
+.watch { position: relative; isolation: isolate; width: min(250px, 60vw); aspect-ratio: 251 / 291; padding: 8.76%; background: #000; border-radius: 28.9% / 24.9%; box-shadow: var(--shadow), 0 0 0 2px #6b6e76, 0 0 0 3px #2a2c31, inset 0 0 0 2px #18191c; }
+.watch img { width: 100%; height: auto; aspect-ratio: 416 / 496; border-radius: 24% / 20.2%; }
+.watch .crown { position: absolute; z-index: -1; left: 100%; top: 21%; width: 4.4%; height: 15%; margin-left: 1px; border-radius: 0 40% 40% 0 / 0 14% 14% 0; background: linear-gradient(#8a8d95, #4a4d54 50%, #6b6e76); }
+.watch .side { position: absolute; z-index: -1; left: 100%; top: 51%; width: 1.8%; height: 21%; margin-left: 1px; border-radius: 0 60% 60% 0 / 0 8% 8% 0; background: #5a5d64; }
+.watch-fig figcaption { margin-top: 18px; }
 
 /* Feature cards */
 .features { margin-top: clamp(72px, 10vw, 130px); display: grid; gap: clamp(14px, 2vw, 22px); grid-template-columns: 1fr; }
