@@ -100,6 +100,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .top nav { display: flex; gap: clamp(12px, 3vw, 26px); align-items: center; font-size: 15px; }
 .top nav a { color: var(--ink-mid); text-decoration: none; }
 .top nav a:hover { color: var(--ink); }
+.top nav a.button, .top nav a.button:hover { color: var(--accent-ink); }
 .theme-switch { display: inline-flex; padding: 3px; gap: 2px; border-radius: 999px; background: var(--paper-inset); box-shadow: inset 0 0 0 1px var(--rule); }
 .theme-switch button { display: grid; place-items: center; width: 30px; height: 26px; padding: 0; border: 0; border-radius: 999px; background: none; color: var(--ink-mute); cursor: pointer; }
 .theme-switch button:hover { color: var(--ink); }
@@ -236,6 +237,10 @@ p { margin: 0; text-wrap: pretty; }
 .panel-device { margin-top: 28px; display: grid; gap: clamp(24px, 4vw, 48px); align-items: center; }
 .panel-device[hidden] { display: none; }
 @media (min-width: 900px) { .panel-device { grid-template-columns: 1.55fr 1fr; } }
+/* A panel whose screenshots take the full width, with the words in a row beneath. */
+.panel-device.wide { grid-template-columns: 1fr; gap: clamp(22px, 3vw, 36px); }
+.panel-device.wide .shots { align-items: center; }
+@media (min-width: 900px) { .panel-device.wide .says { display: grid; grid-template-columns: 1.25fr 1fr; column-gap: clamp(28px, 5vw, 64px); align-items: start; } .panel-device.wide .says h3 { grid-column: 1; } .panel-device.wide .says p { grid-column: 1; } .panel-device.wide .says ul { grid-column: 2; grid-row: 1 / span 2; margin-top: 4px; } }
 .panel-device .says p { margin-top: 12px; color: var(--ink-mid); }
 .panel-device ul, .feature ul { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; color: var(--ink-mid); }
 .panel-device li { padding-left: 22px; position: relative; }
@@ -251,9 +256,14 @@ p { margin: 0; text-wrap: pretty; }
 
 /* The drawn Apple Watch */
 .watch-wrap { flex-direction: column; align-items: center; }
-.watch { position: relative; width: min(230px, 62vw); aspect-ratio: 0.84; background: var(--bezel-fill); border-radius: 26%/22%; padding: 5%; box-shadow: var(--shadow), 0 0 0 1px oklch(0.4 0.01 260 / 0.4); }
-.watch .crown { position: absolute; right: -4.5%; top: 26%; width: 5%; height: 16%; border-radius: 3px; background: #2a2c31; }
-.watch .face { height: 100%; border-radius: 22%/19%; background: #000; color: #f4f1ea; padding: 11% 9% 8%; display: flex; flex-direction: column; font-size: clamp(11px, 3.3vw, 13px); }
+.watch { position: relative; isolation: isolate; width: min(224px, 56vw); aspect-ratio: 0.86; margin: 13% 0; background: linear-gradient(150deg, #4a4c53, #1d1e22 55%, #2b2d32); border-radius: 25% / 21.5%; padding: 3.6%; box-shadow: var(--shadow), inset 0 0 0 1px oklch(1 0 0 / 0.14); }
+/* Band, above and below the case, fading out. */
+.watch::before, .watch::after { content: ""; position: absolute; z-index: -1; left: 13%; right: 13%; height: 34%; background: linear-gradient(90deg, #17181b, #2a2c31 22%, #2a2c31 78%, #17181b); }
+.watch::before { bottom: 93%; border-radius: 16% 16% 0 0 / 30% 30% 0 0; -webkit-mask-image: linear-gradient(to top, #000 30%, transparent); mask-image: linear-gradient(to top, #000 30%, transparent); }
+.watch::after { top: 93%; border-radius: 0 0 16% 16% / 0 0 30% 30%; -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent); mask-image: linear-gradient(to bottom, #000 30%, transparent); }
+.watch .crown { position: absolute; z-index: -1; right: -5%; top: 22%; width: 7%; height: 17%; border-radius: 28% / 16%; background: linear-gradient(#55585f, #25272b); }
+.watch .side { position: absolute; z-index: -1; right: -2.2%; top: 50%; width: 4%; height: 22%; border-radius: 40% / 10%; background: #2c2e33; }
+.watch .face { height: 100%; border-radius: 23.5% / 20%; background: #000; color: #f4f1ea; padding: 12% 10% 9%; display: flex; flex-direction: column; font-size: clamp(10px, 3vw, 12.5px); }
 .w-top { display: flex; justify-content: space-between; font-size: 0.82em; letter-spacing: 0.06em; text-transform: uppercase; color: #9a9ca3; }
 .w-top i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #55b07a; margin-right: 3px; }
 .w-code { margin-top: 7%; font-family: var(--serif); font-size: 1.25em; }
@@ -365,3 +375,5 @@ dialog#invite::backdrop { background: oklch(0.15 0.01 260 / 0.55); backdrop-filt
 #invite .fine { font-size: 13px; color: var(--ink-mute); }
 
 #invite [hidden] { display: none; }
+
+#beta, #devices, #features, #privacy, #faq { scroll-margin-top: 24px; }
