@@ -12,7 +12,8 @@
 <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="stylesheet" href="styles.css?v=202611181255">
+<script src="theme.js?v=202611181330"></script>
+<link rel="stylesheet" href="styles.css?v=202611181330">
 </head>
 <body>
 <div class="glow" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -24,6 +25,10 @@
       <a class="hide-narrow" href="#devices">Devices</a>
       <a class="hide-narrow" href="#features">What it does</a>
       <a class="hide-narrow" href="#privacy">Privacy</a>
+      <div class="theme-switch" role="group" aria-label="Appearance">
+        <button type="button" data-theme-set="light" aria-pressed="false" aria-label="Light" title="Light"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg></button>
+        <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark" title="Dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2z"/></svg></button>
+      </div>
       <button class="button small" type="button" data-open-invite>Join the beta</button>
     </nav>
   </header>
@@ -47,9 +52,9 @@
       <p class="fine"><span class="badge">Beta</span> Designed for iPad and iPhone Duo. At home on any iPhone. On your wrist with Apple Watch.</p>
 
       <div class="stage" data-tilt>
-        <div class="frame pad-land layer" data-depth="6"><img src="assets/ipad-land-pulse.jpg" alt="Pulse on iPad in landscape: eighteen figures about a show called Paper Moon, a pipeline bar and a burn-up chart of approved and published shots." width="2000" height="1500"></div>
-        <div class="frame duo-open layer" data-depth="14"><img src="assets/duo-open-shot.jpg" alt="A shot open on an unfolded iPhone Duo: its notes on the left, its stage, timer and actions on the right." width="2000" height="1407" loading="lazy"></div>
-        <div class="frame phone layer" data-depth="22"><img src="assets/max-thisweek.jpg" alt="This Week on iPhone: three shots due, with notes to do, bids and timers." width="690" height="1500" loading="lazy"></div>
+        <div class="frame pad-land layer" data-depth="6"><picture><source data-dark srcset="assets/ipad-land-pulse-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/ipad-land-pulse.jpg" alt="Pulse on iPad in landscape: eighteen figures about a show called Paper Moon, a pipeline bar and a burn-up chart of approved and published shots." width="2000" height="1500"></picture></div>
+        <div class="frame duo-open layer" data-depth="14"><picture><source data-dark srcset="assets/duo-open-shot-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/duo-open-shot.jpg" alt="A shot open on an unfolded iPhone Duo: its notes on the left, its stage, timer and actions on the right." width="2000" height="1407" loading="lazy"></picture></div>
+        <div class="frame phone layer" data-depth="22"><picture><source data-dark srcset="assets/max-thisweek-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/max-thisweek.jpg" alt="This Week on iPhone: three shots due, with notes to do, bids and timers." width="690" height="1500" loading="lazy"></picture></div>
       </div>
     </section>
   </main>
@@ -92,7 +97,7 @@
 
       <div class="panel-device" role="tabpanel" id="panel-ipad" aria-labelledby="tab-ipad">
         <div class="shots one">
-          <figure><div class="frame pad-land"><img src="assets/ipad-land-board.jpg" alt="The Board on iPad: every shot in the show laid out in lanes by stage, with filters and a search field above." width="2000" height="1500" loading="lazy"></div><figcaption>The Board, every lane at once</figcaption></figure>
+          <figure><div class="frame pad-land"><picture><source data-dark srcset="assets/ipad-land-board-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/ipad-land-board.jpg" alt="The Board on iPad: every shot in the show laid out in lanes by stage, with filters and a search field above." width="2000" height="1500" loading="lazy"></picture></div><figcaption>The Board, every lane at once</figcaption></figure>
         </div>
         <div class="says">
           <h3>The desk view.</h3>
@@ -103,9 +108,9 @@
 
       <div class="panel-device" role="tabpanel" id="panel-duo" aria-labelledby="tab-duo" hidden>
         <div class="shots three">
-          <figure><div class="frame duo-fold"><img src="assets/duo-thisweek.jpg" alt="This Week on a folded iPhone Duo, with the timer in the top bar and the tabs down the side." width="1031" height="1500" loading="lazy"></div><figcaption>Folded</figcaption></figure>
-          <figure class="grow"><div class="frame duo-open"><img src="assets/duo-open-shot.jpg" alt="A shot on an open iPhone Duo: notes on the left half, stage, timer and actions on the right half." width="2000" height="1407" loading="lazy"></div><figcaption>Open: notes on one side, the shot on the other</figcaption></figure>
-          <figure class="grow"><div class="frame duo-open"><img src="assets/duo-open-now.jpg" alt="The Now screen on a half-open iPhone Duo: the timer dial on one half and the shot's open fixes on the other." width="2000" height="1407" loading="lazy"></div><figcaption>Propped up: the clock on one half, your fixes on the other</figcaption></figure>
+          <figure><div class="frame duo-fold"><picture><source data-dark srcset="assets/duo-thisweek-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/duo-thisweek.jpg" alt="This Week on a folded iPhone Duo, with the timer in the top bar and the tabs down the side." width="1031" height="1500" loading="lazy"></picture></div><figcaption>Folded</figcaption></figure>
+          <figure class="grow"><div class="frame duo-open"><picture><source data-dark srcset="assets/duo-open-shot-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/duo-open-shot.jpg" alt="A shot on an open iPhone Duo: notes on the left half, stage, timer and actions on the right half." width="2000" height="1407" loading="lazy"></picture></div><figcaption>Open: notes on one side, the shot on the other</figcaption></figure>
+          <figure class="grow"><div class="frame duo-open"><picture><source data-dark srcset="assets/duo-open-now-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/duo-open-now.jpg" alt="The Now screen on a half-open iPhone Duo: the timer dial on one half and the shot's open fixes on the other." width="2000" height="1407" loading="lazy"></picture></div><figcaption>Propped up: the clock on one half, your fixes on the other</figcaption></figure>
         </div>
         <div class="says">
           <h3>Three poses, three layouts.</h3>
@@ -116,9 +121,9 @@
 
       <div class="panel-device" role="tabpanel" id="panel-iphone" aria-labelledby="tab-iphone" hidden>
         <div class="shots three phones">
-          <figure><div class="frame phone"><img src="assets/max-thisweek.jpg" alt="This Week on iPhone." width="690" height="1500" loading="lazy"></div><figcaption>This Week</figcaption></figure>
-          <figure><div class="frame phone"><img src="assets/max-shot.jpg" alt="A shot's notes on iPhone, with a timer running." width="690" height="1500" loading="lazy"></div><figcaption>A shot's notebook</figcaption></figure>
-          <figure><div class="frame phone"><img src="assets/max-timecard.jpg" alt="The week's timecard on iPhone." width="690" height="1500" loading="lazy"></div><figcaption>Timecard</figcaption></figure>
+          <figure><div class="frame phone"><picture><source data-dark srcset="assets/max-thisweek-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/max-thisweek.jpg" alt="This Week on iPhone." width="690" height="1500" loading="lazy"></picture></div><figcaption>This Week</figcaption></figure>
+          <figure><div class="frame phone"><picture><source data-dark srcset="assets/max-shot-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/max-shot.jpg" alt="A shot's notes on iPhone, with a timer running." width="690" height="1500" loading="lazy"></picture></div><figcaption>A shot's notebook</figcaption></figure>
+          <figure><div class="frame phone"><picture><source data-dark srcset="assets/max-timecard-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/max-timecard.jpg" alt="The week's timecard on iPhone." width="690" height="1500" loading="lazy"></picture></div><figcaption>Timecard</figcaption></figure>
         </div>
         <div class="says">
           <h3>All of it, one-handed.</h3>
@@ -157,7 +162,7 @@
           <h3>Every note, on the shot it belongs to.</h3>
           <p>Capture review notes as fast as they're said, filed by shot, by day and by who gave them. Tick fixes off, and see what's still open before you send it back.</p>
         </div>
-        <div class="frame duo-open"><img src="assets/duo-open-thisweek.jpg" alt="This Week on an open iPhone Duo: shots due this week, each with a count of notes to do." width="2000" height="1407" loading="lazy"></div>
+        <div class="frame duo-open"><picture><source data-dark srcset="assets/duo-open-thisweek-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/duo-open-thisweek.jpg" alt="This Week on an open iPhone Duo: shots due this week, each with a count of notes to do." width="2000" height="1407" loading="lazy"></picture></div>
       </article>
       <article class="card wide flip reveal">
         <div class="copy">
@@ -165,7 +170,7 @@
           <h3>One timer. It follows you everywhere.</h3>
           <p>Start from the app, a widget, the Lock Screen, Siri or your wrist. The Now screen shows only the shot in front of you and its open fixes, with a focus block when you need an hour without looking up.</p>
         </div>
-        <div class="frame duo-open"><img src="assets/duo-open-now.jpg" alt="The Now screen: a timer dial beside the shot's open fixes, with Stop, Switch, Submit and Rendering buttons." width="2000" height="1407" loading="lazy"></div>
+        <div class="frame duo-open"><picture><source data-dark srcset="assets/duo-open-now-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/duo-open-now.jpg" alt="The Now screen: a timer dial beside the shot's open fixes, with Stop, Switch, Submit and Rendering buttons." width="2000" height="1407" loading="lazy"></picture></div>
       </article>
       <article class="card wide reveal">
         <div class="copy">
@@ -173,7 +178,7 @@
           <h3>A timecard that already knows what you did.</h3>
           <p>Hours land on the right shot and day as you work. Straight time, 1.5× and 2× are split out by your own rules or The Animation Guild's, and the grid copies straight into the studio's form. It flags hours; it never calculates pay.</p>
         </div>
-        <div class="frame pad-land"><img src="assets/ipad-land-timecard.jpg" alt="The timecard on iPad: a week grid of hours per shot and per day, with straight time, overtime and daily totals." width="2000" height="1500" loading="lazy"></div>
+        <div class="frame pad-land"><picture><source data-dark srcset="assets/ipad-land-timecard-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/ipad-land-timecard.jpg" alt="The timecard on iPad: a week grid of hours per shot and per day, with straight time, overtime and daily totals." width="2000" height="1500" loading="lazy"></picture></div>
       </article>
       <article class="card wide flip reveal">
         <div class="copy">
@@ -183,7 +188,7 @@
           <div class="pipeline" aria-hidden="true"><i style="--w: 18%; --c: var(--wip)"></i><i style="--w: 6%; --c: var(--teal)"></i><i style="--w: 76%; --c: var(--published)"></i></div>
           <p class="legend"><span style="--c: var(--wip)">3 in progress</span><span style="--c: var(--teal)">1 ready for final check</span><span style="--c: var(--published)">13 published</span></p>
         </div>
-        <div class="sheet"><img src="assets/pulse-charts.jpg" alt="Three Pulse charts: weekly load as bars with overtime marked, a ring showing where time went, and review cadence by week split into approved, with fix and sent back." width="1424" height="1520" loading="lazy"></div>
+        <div class="sheet"><picture><source data-dark srcset="assets/pulse-charts-dark.jpg" media="(prefers-color-scheme: dark)"><img src="assets/pulse-charts.jpg" alt="Three Pulse charts: weekly load as bars with overtime marked, a ring showing where time went, and review cadence by week split into approved, with fix and sent back." width="1424" height="1520" loading="lazy"></picture></div>
       </article>
     </div>
 
@@ -285,6 +290,6 @@
     </div>
   </footer>
 </div>
-<script src="site.js?v=202611181255"></script>
+<script src="site.js?v=202611181330"></script>
 </body>
 </html>
