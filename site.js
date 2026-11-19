@@ -19,6 +19,13 @@ const CONTACT_EMAIL = "hello@couldbebetter.app";
   const copyBox = document.getElementById("invite-copy");
   const copyButton = document.getElementById("invite-copy-button");
   const reopen = document.getElementById("invite-reopen");
+  const gmail = document.getElementById("invite-gmail");
+  const hint = document.getElementById("invite-hint");
+  // If the Gmail app isn't installed its link does nothing, so say what to do instead.
+  gmail?.addEventListener("click", () => {
+    if (!gmail.href.startsWith("googlegmail:")) return;
+    setTimeout(() => { if (!document.hidden) hint.firstChild.textContent = "Gmail didn't open? Tap Copy the text, then paste it into a new email to "; }, 1500);
+  });
   if (!dialog || !form) return;
 
   // With a form service the request sends itself, so the email explanation goes away.
@@ -92,12 +99,18 @@ const CONTACT_EMAIL = "hello@couldbebetter.app";
       ].join("\n");
       const subject = `Beta request: ${answers.name} (${answers.role})`;
       const link = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      doneTitle.textContent = "One step left: press Send.";
-      doneText.textContent = "Your request is written and waiting in your mail app. Send it from there and you're done. If there's a spot, a TestFlight invite will arrive at the email you gave.";
+      // Nothing opens by itself: people pick the mail they actually use.
+      const q = `to=${encodeURIComponent(CONTACT_EMAIL)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const apple = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      // On iPhone and iPad the Gmail app has its own link; elsewhere Gmail opens in the browser.
+      gmail.href = apple ? `googlegmail:///co?${q}` : `https://mail.google.com/mail/?view=cm&fs=1&${q.replace("subject=", "su=")}`;
+      if (apple) gmail.removeAttribute("target"); else gmail.target = "_blank";
+      reopen.href = link;
+      doneTitle.textContent = "Last step: send it.";
+      doneText.textContent = "Your request is written. Choose how you'd like to send it. If there's a spot, a TestFlight invite will arrive at the email you gave.";
+      hint.firstChild.textContent = "Copying? Paste it into a new email to ";
       copyBox.value = `To: ${CONTACT_EMAIL}\nSubject: ${subject}\n\n${body}`;
-      fallback.hidden = false; copyButton.hidden = false; copyButton.textContent = "Copy request";
-      reopen.href = link; reopen.hidden = false;
-      location.href = link;
+      fallback.hidden = false; copyButton.textContent = "Copy the text";
     }
     form.reset(); form.hidden = true; done.hidden = false;
   });
