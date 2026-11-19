@@ -7,8 +7,8 @@
 <meta name="description" content="Help with Could Be Better and how the beta works.">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<script src="theme.js?v=202611181343"></script>
-<link rel="stylesheet" href="styles.css?v=202611181343">
+<script src="theme.js?v=202611181734"></script>
+<link rel="stylesheet" href="styles.css?v=202611181734">
 </head>
 <body>
 <div class="wrap">
@@ -39,15 +39,53 @@
     </ul>
     <p>Screenshots can show shot names and notes. Turn on the Privacy Lock (the eye button) before taking one, or leave the screenshot out.</p>
 
+    <h2>Words the app uses</h2>
+    <p>The app borrows its vocabulary from animation and visual effects. If you work in another role, or another industry, this is what the words mean here:</p>
+    <ul>
+      <li><strong>Show</strong>: one project you work on from start to finish, such as a film or a series. Everything in the app belongs to a show.</li>
+      <li><strong>Shot</strong>: one piece of work inside a show, with its own code (for example 310.0 / 086.00), its own notes and its own hours. If your work isn't split into shots, think of it as a task.</li>
+      <li><strong>Review</strong>: a meeting where someone looks at your work and gives notes, such as dailies or a supervisor's rounds. You name your own reviews when you set up a show.</li>
+      <li><strong>Timecard</strong>: the hours you worked each day of the week, per shot, in the form most studios ask you to report them.</li>
+    </ul>
+
     <h2>Common questions</h2>
-    <h2 style="font-size: 20px; margin-top: 28px">My other device is empty</h2>
-    <p>Both devices need to be signed in to the same iCloud account with iCloud on for the app. The first sync can take a few minutes on Wi-Fi. If nothing arrives, close the app completely and open it again.</p>
-    <h2 style="font-size: 20px; margin-top: 28px">The overtime on my timecard is wrong</h2>
-    <p>Check Settings → Week &amp; Overtime. You can set your own 1.5× and 2× lines, turn overtime off, or, on a Guild show, change how you're paid and switch off individual rules under Settings → This Show. The app flags hours; it never calculates pay, so always check against your own timecard.</p>
-    <h2 style="font-size: 20px; margin-top: 28px">I finished a show. Now what?</h2>
-    <p>Wrap it from Pulse → Show Details. Its time and pipeline lock, your notes stay readable, and you can export a reel breakdown and timecard. It then lives under Past Shows.</p>
-    <h2 style="font-size: 20px; margin-top: 28px">How do I move to a new phone?</h2>
-    <p>With iCloud on, sign in on the new phone and open the app. Without iCloud, export a backup from Settings → Backup and restore it on the new device.</p>
+
+    <h3 class="q">I installed the app on a second device and it's empty</h3>
+    <p>The app has no account of its own. It copies your shows between your devices through iCloud, Apple's own storage, so the copy only happens when both devices use the same Apple Account.</p>
+    <ul>
+      <li>On both devices, open the Settings app, tap your name, then iCloud, and check that CBB is switched on in the list of apps saved to iCloud.</li>
+      <li>Give the first copy a few minutes on Wi-Fi with the app open. A whole show is a lot of small pieces.</li>
+      <li>If nothing has arrived after that, close the app completely (swipe it away in the app switcher) and open it again.</li>
+      <li>In the app, Settings → iCloud Sync shows when this device last sent and received changes.</li>
+    </ul>
+
+    <h3 class="q">The overtime on my timecard looks wrong</h3>
+    <p>Overtime rules differ from one employer to the next, so the app asks you for yours rather than guessing. They live in Settings → Week &amp; Overtime:</p>
+    <ul>
+      <li><strong>The 1.5× and 2× lines</strong> are the number of hours in a day or week after which your employer pays time-and-a-half or double time. Many contracts use 8 hours a day and 40 a week for 1.5×. Set them to match your own contract.</li>
+      <li><strong>Not paid overtime?</strong> Turn it off, and the app simply counts hours.</li>
+      <li><strong>Animation Guild (Local 839) members</strong> can choose the Guild's rules instead: a Sunday-to-Saturday week, overtime after 8 hours a day, a higher rate on the sixth and seventh day worked, and double time late in a very long day. Under Settings → This Show you can say how you're paid and switch off any rule your deal doesn't include.</li>
+    </ul>
+    <p>The app marks which hours fall past each line. It never works out money, and it isn't your employer's record, so check it against your official timecard before you submit anything.</p>
+
+    <h3 class="q">My hours are a few minutes different from what I timed</h3>
+    <p>Most studios want time reported in fixed steps, for example six minutes (a tenth of an hour) or fifteen. The Timecard has two views: Precise shows exactly what the timer recorded, and Rounded shows the same time in your studio's steps. Choose the step in Settings → Time &amp; Rounding. The exact time is always kept; rounding only changes how it's shown and exported.</p>
+
+    <h3 class="q">I finished a show. Now what?</h3>
+    <p>Wrap it. "Wrapping" is the industry's word for finishing a production, and in the app it closes the show without deleting anything. Open Pulse, tap the pencil beside the show's dates to open Show Details, then Wrap Show.</p>
+    <ul>
+      <li>The hours and the stage of each shot are locked, so the record of the show can't change by accident.</li>
+      <li>Your notes stay readable and you can still add to them.</li>
+      <li>You can export a reel breakdown (a list of the shots you worked on and what you did, for your showreel) and the full timecard.</li>
+      <li>The show moves to Past Shows, where you can open it again at any time. The app then opens on your current show, or offers to start a new one.</li>
+    </ul>
+
+    <h3 class="q">How do I move to a new phone?</h3>
+    <p>With iCloud on, there's nothing to move: sign in to the new phone with the same Apple Account, install the app, open it and wait a few minutes for your shows to arrive.</p>
+    <p>Without iCloud, your shows exist only on the old phone. On it, go to Settings → Backup and export Everything. That saves one file with every show in it, which you can keep anywhere. Send the file to the new phone and bring it in with Settings → Backup → Restore from Backup.</p>
+
+    <h3 class="q">What happens to my data if I delete the app?</h3>
+    <p>With iCloud on, your shows stay in your own iCloud and come back when you reinstall. Without iCloud, deleting the app deletes its data, so export a backup first. Either way, nobody else has a copy: there is no server.</p>
 
     <h2>Contact</h2>
     <p><a href="mailto:hello@couldbebetter.app">hello@couldbebetter.app</a>. It's one person, so replies can take a day or two.</p>

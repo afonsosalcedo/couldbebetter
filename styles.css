@@ -372,3 +372,6 @@ dialog#invite::backdrop { background: oklch(0.15 0.01 260 / 0.55); backdrop-filt
 #invite [hidden] { display: none; }
 
 #beta, #devices, #features, #privacy, #faq { scroll-margin-top: 24px; }
+
+.prose h3.q { font-family: var(--sans); font-size: 19px; font-weight: 650; margin-top: 34px; }
+.prose h3.q + p { margin-top: 8px; }
