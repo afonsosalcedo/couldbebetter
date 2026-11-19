@@ -17,8 +17,8 @@
 <meta name="theme-color" content="#14161a">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<script src="theme.js?v=202611181734"></script>
-<link rel="stylesheet" href="styles.css?v=202611181734">
+<script src="theme.js?v=202611191200"></script>
+<link rel="stylesheet" href="styles.css?v=202611191200">
 </head>
 <body>
 <div class="glow" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -252,16 +252,25 @@
         <label>Anything else? <small>optional</small><textarea name="note" rows="2" maxlength="600"></textarea></label>
         <label class="tick consent"><input type="checkbox" name="consent" required> <span>I understand this is beta software, provided as is, and that it may have bugs, including data loss. I've read the <a href="terms.html" target="_blank" rel="noopener">beta terms</a> and <a href="privacy.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
         <p class="form-error" id="invite-error" role="alert" hidden></p>
+        <p class="how" id="invite-how">This writes an email for you with these answers in it. Your mail app opens, you press Send, and that's it.</p>
         <div class="dialog-actions">
           <button class="button quiet" type="button" data-close-invite>Cancel</button>
-          <button class="button" type="submit">Send request</button>
+          <button class="button" type="submit" id="invite-submit">Write my email</button>
         </div>
         <p class="fine">Your details are used only to run the beta, and deleted when it ends or when you ask.</p>
       </form>
       <div id="invite-done" hidden>
-        <h2>Request sent.</h2>
+        <h2 id="invite-done-title">Request sent.</h2>
         <p id="invite-done-text">Thank you. If there's a spot, a TestFlight invite will arrive at the email you gave.</p>
-        <div class="dialog-actions"><button class="button" type="button" data-close-invite>Done</button></div>
+        <div id="invite-fallback" hidden>
+          <p class="fine">Nothing opened? Copy the request below and email it to <a id="invite-fallback-mail" href="mailto:hello@couldbebetter.app">hello@couldbebetter.app</a> from any account.</p>
+          <textarea id="invite-copy" readonly rows="9" aria-label="Your request, ready to copy"></textarea>
+        </div>
+        <div class="dialog-actions">
+          <button class="button quiet" type="button" id="invite-copy-button" hidden>Copy request</button>
+          <a class="button quiet" id="invite-reopen" hidden>Open the email again</a>
+          <button class="button" type="button" data-close-invite>Done</button>
+        </div>
       </div>
     </dialog>
 
@@ -287,6 +296,6 @@
     </div>
   </footer>
 </div>
-<script src="site.js?v=202611181734"></script>
+<script src="site.js?v=202611191200"></script>
 </body>
 </html>

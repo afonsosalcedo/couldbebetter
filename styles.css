@@ -368,6 +368,10 @@ dialog#invite::backdrop { background: oklch(0.15 0.01 260 / 0.55); backdrop-filt
 .form-error { color: var(--stop); font-size: 14px; font-weight: 600; }
 .dialog-actions { display: flex; justify-content: flex-end; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 #invite .fine { font-size: 13px; color: var(--ink-mute); }
+#invite .how { font-size: 14px; color: var(--ink-mid); padding: 10px 12px; border-radius: 10px; background: var(--paper-raised); box-shadow: inset 0 0 0 1px var(--rule); }
+#invite-fallback { display: grid; gap: 8px; }
+#invite #invite-copy { width: 100%; font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; resize: vertical; }
+#invite-done a.button { text-decoration: none; }
 
 #invite [hidden] { display: none; }
 

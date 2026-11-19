@@ -14,7 +14,23 @@ const CONTACT_EMAIL = "hello@couldbebetter.app";
   const done = document.getElementById("invite-done");
   const doneText = document.getElementById("invite-done-text");
   const error = document.getElementById("invite-error");
+  const doneTitle = document.getElementById("invite-done-title");
+  const fallback = document.getElementById("invite-fallback");
+  const copyBox = document.getElementById("invite-copy");
+  const copyButton = document.getElementById("invite-copy-button");
+  const reopen = document.getElementById("invite-reopen");
   if (!dialog || !form) return;
+
+  // With a form service the request sends itself, so the email explanation goes away.
+  if (FORM_ENDPOINT) {
+    document.getElementById("invite-how").hidden = true;
+    document.getElementById("invite-submit").textContent = "Send request";
+  }
+  copyButton?.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(copyBox.value); }
+    catch { copyBox.select(); document.execCommand("copy"); }
+    copyButton.textContent = "Copied";
+  });
 
   document.querySelectorAll("[data-open-invite]").forEach((el) => el.addEventListener("click", () => {
     form.hidden = false; done.hidden = true; error.hidden = true;
@@ -61,13 +77,27 @@ const CONTACT_EMAIL = "hello@couldbebetter.app";
       }
       button.disabled = false;
     } else {
-      const lines = [
-        `Name: ${answers.name}`, `Email: ${answers.email}`, `Role: ${answers.role}`,
-        `Works in: ${answers.workplace || "-"}`, `Union timecard: ${answers.union || "not sure"}`,
-        `Devices: ${answers.devices || "-"}`, `Accepted beta terms: yes`, "", answers.note,
-      ];
-      location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Could Be Better beta request")}&body=${encodeURIComponent(lines.join("\n"))}`;
-      doneText.textContent = `Your mail app should have opened with the request ready to send. If it didn't, email ${CONTACT_EMAIL} with the same details.`;
+      // A plain-text email (mailto can't carry formatting), laid out to read well.
+      const body = [
+        "Hi Afonso,", "",
+        "I'd like to join the Could Be Better beta.", "",
+        `Name: ${answers.name}`,
+        `Apple Account email: ${answers.email}`,
+        `What I do: ${answers.role}`,
+        `Where I work: ${answers.workplace || "Prefer not to say"}`,
+        `Union timecard: ${answers.union || "Not sure"}`,
+        `Devices: ${answers.devices || "Not said"}`,
+        ...(answers.note ? ["", `Note: ${answers.note}`] : []),
+        "", "I understand this is beta software, and I've read the beta terms and privacy policy.",
+      ].join("\n");
+      const subject = `Beta request: ${answers.name} (${answers.role})`;
+      const link = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      doneTitle.textContent = "One step left: press Send.";
+      doneText.textContent = "Your request is written and waiting in your mail app. Send it from there and you're done. If there's a spot, a TestFlight invite will arrive at the email you gave.";
+      copyBox.value = `To: ${CONTACT_EMAIL}\nSubject: ${subject}\n\n${body}`;
+      fallback.hidden = false; copyButton.hidden = false; copyButton.textContent = "Copy request";
+      reopen.href = link; reopen.hidden = false;
+      location.href = link;
     }
     form.reset(); form.hidden = true; done.hidden = false;
   });
