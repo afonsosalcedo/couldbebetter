@@ -300,6 +300,8 @@ p { margin: 0; text-wrap: pretty; }
 .beta .fine { margin-top: 14px; font-size: 14px; color: var(--ink-mute); }
 .spots { display: inline-flex; gap: 8px; align-items: center; margin-top: 18px; padding: 6px 12px; border-radius: 999px; background: var(--paper-raised); box-shadow: inset 0 0 0 1px var(--rule); font-size: 14px; color: var(--ink-mid); }
 .spots i { width: 8px; height: 8px; border-radius: 50%; background: var(--published); }
+.spots.needs { margin-left: 6px; }
+.spots.needs i { background: var(--accent); }
 
 /* FAQ */
 .faq { margin: clamp(72px, 10vw, 130px) auto 0; max-width: 760px; }

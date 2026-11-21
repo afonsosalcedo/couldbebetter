@@ -17,8 +17,8 @@
 <meta name="theme-color" content="#14161a">
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<script src="theme.js?v=202611191500"></script>
-<link rel="stylesheet" href="styles.css?v=202611191500">
+<script src="theme.js?v=202611211000"></script>
+<link rel="stylesheet" href="styles.css?v=202611211000">
 </head>
 <body>
 <div class="glow" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -54,7 +54,7 @@
         <a class="button" href="#beta">Join the beta</a>
         <a class="button quiet" href="#devices">See it on your devices</a>
       </div>
-      <p class="fine"><span class="badge">Beta</span> Designed for iPad and iPhone Duo. At home on any iPhone. On your wrist with Apple Watch.</p>
+      <p class="fine"><span class="badge">Beta</span> Designed for iPad and iPhone Duo. At home on any iPhone. On your wrist with Apple Watch. Needs iOS 27.1 or later.</p>
 
       <div class="stage" data-tilt>
         <div class="frame pad-land layer" data-depth="6"><picture><source data-dark srcset="assets/ipad-land-pulse-dark.jpg" media="all"><img src="assets/ipad-land-pulse.jpg" alt="Pulse on iPad in landscape: eighteen figures about a show called Paper Moon, a pipeline bar and a burn-up chart of approved and published shots." width="2000" height="1500"></picture></div>
@@ -205,11 +205,12 @@
       <h2>Fifty artists. Then we see.</h2>
       <p class="lede">Could Be Better was built by one lighting artist, on one show. The beta is for finding out where it doesn't fit yours: other studios, other pipelines, other timecards.</p>
       <div class="spots"><i></i> 50 spots through TestFlight</div>
+      <div class="spots needs"><i></i> Needs iOS or iPadOS 27.1 or later</div>
       <div class="actions">
         <button class="button" type="button" data-open-invite>Ask for an invite</button>
         <a class="button quiet" href="support.html">How the beta works</a>
       </div>
-      <p class="fine">Requires iOS or iPadOS 27.1 or later. Free during the beta.</p>
+      <p class="fine">It won't install on anything older than iOS or iPadOS 27.1. To check yours, open Settings → General → About. Free during the beta.</p>
       <div class="honest">
         <h3>The honest part</h3>
         <p>This is beta software. It ran a full show over a summer without losing anything, and it can still have bugs, including ones that lose data. It's provided as is, with no warranty, and you use it at your own risk. Export a backup regularly (it's one tap in Settings), and don't make it the only place something important lives. <a href="terms.html">Beta terms</a></p>
@@ -249,6 +250,7 @@
           <label class="tick"><input type="checkbox" name="devices" value="iPhone Duo"> iPhone Duo</label>
           <label class="tick"><input type="checkbox" name="devices" value="Apple Watch"> Apple Watch</label>
         </fieldset>
+        <label class="tick consent"><input type="checkbox" name="os" required> <span>My iPhone or iPad runs iOS or iPadOS 27.1 or later. <small>Check in Settings → General → About. The app can't install on older versions.</small></span></label>
         <label>Anything else? <small>optional</small><textarea name="note" rows="2" maxlength="600"></textarea></label>
         <label class="tick consent"><input type="checkbox" name="consent" required> <span>I understand this is beta software, provided as is, and that it may have bugs, including data loss. I've read the <a href="terms.html" target="_blank" rel="noopener">beta terms</a> and <a href="privacy.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
         <p class="form-error" id="invite-error" role="alert" hidden></p>
@@ -299,6 +301,6 @@
     </div>
   </footer>
 </div>
-<script src="site.js?v=202611191500"></script>
+<script src="site.js?v=202611211000"></script>
 </body>
 </html>

@@ -59,11 +59,13 @@ const CONTACT_EMAIL = "hello@couldbebetter.app";
       devices: data.getAll("devices").join(", "),
       note: (data.get("note") || "").trim(),
       acceptedBetaTerms: data.get("consent") ? "yes" : "no",
+      runsIOS27: data.get("os") ? "yes" : "no",
     };
     const fail = (message, field) => { error.textContent = message; error.hidden = false; form.elements[field]?.focus(); };
     if (!answers.name) return fail("Please add your name.", "name");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answers.email)) return fail("That email doesn't look right.", "email");
     if (!answers.role) return fail("Please choose what you do.", "role");
+    if (answers.runsIOS27 !== "yes") return fail("The beta needs iOS or iPadOS 27.1 or later. Tick the box once your device is on it.", "os");
     if (answers.acceptedBetaTerms !== "yes") return fail("Please tick the box about beta software to continue.", "consent");
     error.hidden = true;
 
@@ -94,6 +96,7 @@ const CONTACT_EMAIL = "hello@couldbebetter.app";
         `Where I work: ${answers.workplace || "Prefer not to say"}`,
         `Union timecard: ${answers.union || "Not sure"}`,
         `Devices: ${answers.devices || "Not said"}`,
+        "On iOS or iPadOS 27.1 or later: yes",
         ...(answers.note ? ["", `Note: ${answers.note}`] : []),
         "", "I understand this is beta software, and I've read the beta terms and privacy policy.",
       ].join("\n");
